@@ -9,8 +9,11 @@ import * as poseDetection from '@tensorflow-models/pose-detection'
 import '@tensorflow/tfjs-backend-webgl'
 import { Clown } from './clown';
 
-const camera = document.getElementById('camera')!;
-const canvas = document.getElementById('scene')!;
+// const camera = document.getElementById('camera')!;
+// const canvas = document.getElementById('scene')!;
+
+const canvas = document.querySelector<HTMLCanvasElement>('canvas')!;
+const camera = document.querySelector<HTMLVideoElement>('video')!;
 
 var canvas_drawing_context = canvas.getContext("2d");
 // canvas_drawing_context.fillStyle = "#FF0000";

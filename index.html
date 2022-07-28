@@ -7,20 +7,21 @@
     <title>Make your clown dance</title>
   
   </head>
-  <body>
+ <body>
     <div class="container">
-    
-      <video  width="640" height="480" id="camera"  playsinline autoplay='true'></video>
-      <canvas  width="640" height="480" id="scene"></canvas>
+      <video
+        playsinline
+        autoplay="true"
+        width="640"
+        height="480"
+        visible 
+      ></video>
+      <canvas 
+        width="640"
+        height="480"
+      />
     </div>
-    
-    
+    <!--<script type="module" src="/src/scene.ts"></script>-->
     <script type="module" src="/src/main.ts"></script>
-    <!-- <script>
-      var canvas = document.getElementById("scene");
-      var ctx = canvas.getContext("2d");
-      ctx.fillStyle = "#FF0000";
-      ctx.fillRect(0, 0, window.innerHeight/4, window.innerHeight/4);
-      </script>       -->
   </body>
 </html>
