@@ -9,10 +9,12 @@
   </head>
   <body>
     <div class="container">
-      <canvas id="scene"></canvas>
+    
+      <video  width="640" height="480" id="camera"  playsinline autoplay='true'></video>
+      <canvas  width="640" height="480" id="scene"></canvas>
     </div>
     
-    <video  width="640" height="480" id="camera"  playsinline autoplay='true'/>
+    
     <script type="module" src="/src/main.ts"></script>
     <!-- <script>
       var canvas = document.getElementById("scene");

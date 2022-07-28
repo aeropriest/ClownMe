@@ -7,6 +7,7 @@
 import './style.css'
 import * as poseDetection from '@tensorflow-models/pose-detection'
 import '@tensorflow/tfjs-backend-webgl'
+import { Clown } from './clown';
 
 const camera = document.getElementById('camera')!;
 const canvas = document.getElementById('scene')!;
@@ -41,11 +42,15 @@ async function initCamera() {
 async function start(){
   await initCamera();
   const detector = await initPoseDetection()
+  const clown = new Clown(canvas_drawing_context)
 
   async function render(){
     const poses = await detector.estimatePoses(camera)
-    if( poses[0] )
-        console.log(poses[0])
+    canvas_drawing_context.clearRect(0, 0, window.innerWidth, window.innerHeight) 
+    if( poses[0] ){
+      clown.draw(poses[0])
+    }
+        
     requestAnimationFrame(render)
   }
 
